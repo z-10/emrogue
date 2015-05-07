@@ -1,9 +1,8 @@
 #!/bin/bash
 
-rm -rf build
 rm -rf web
 
-pushd pdcurses/sdl1
+pushd rogue/sdl1
 emmake make clean
 popd
 

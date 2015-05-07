@@ -26,10 +26,10 @@ O=o
 CC    = /Users/roman/WORK/emsdk_portable/emscripten/1.30.0/emcc
 
 #CFLAGS=-O2
-CFLAGS= -I../pdcurses/ -s ASYNCIFY=1
+CFLAGS= -I./
 
 #LIBS=-lcurses
-LIBS = -L../build/ -lpdcurses
+LIBS = -L./sdl1/ -lpdcurses
 
 #RM=rm -f
 RM    = rm -f
@@ -60,9 +60,6 @@ GROUPOWNER =
 
 #CPPFLAGS=-DHAVE_CONFIG_H
 CPPFLAGS =-DHAVE_CONFIG_H 
-
-#DISTFILE = $(PROGRAM)
-DISTFILE = $(DISTNAME)-i386-apple-darwin14.3.0
 
 INSTALL=./install-sh
 
@@ -122,7 +119,7 @@ CFILES   = vers.c extern.c armor.c chase.c command.c daemon.c \
 	$(CC) $(CFLAGS) $(CPPFLAGS) -c $*.c
     
 $(PROGRAM): $(HDRS) $(OBJS)
-	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(LIBS) -O2 -o $@.bc
+	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(LIBS) -Os -o $@.bc
     
 clean:
 	$(RM) $(OBJS1)
