@@ -32,7 +32,7 @@ all:	libs
 libs:	$(LIBCURSES)
 
 clean:
-	-rm -rf *.o trace $(LIBCURSES) $(DEMOS)
+	-rm -rf ../pdcurses/*.o *.o trace $(LIBCURSES) $(DEMOS)
 
 $(LIBCURSES) : $(LIBOBJS) $(PDCOBJS)
 	ar rv $@ $?

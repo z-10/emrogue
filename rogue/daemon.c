@@ -108,7 +108,7 @@ do_daemons(int flag)
 	/*
 	 * Executing each one, giving it the proper arguments
 	 */
-	if (dev->d_type == flag && dev->d_time == DAEMON)
+	if (dev->d_type == flag && dev->d_time == DAEMON && dev->d_func)
 	    (*dev->d_func)(dev->d_arg);
 }
 
